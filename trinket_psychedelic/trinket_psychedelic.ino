@@ -21,6 +21,20 @@ void waveCrash() {
   delay(250); 
 }
 
+void rotateLine() {
+  for(int i = 7; i >=0 ; i--) {
+    m.clear();
+    m.drawLine(0,i,7,7-i,LED_YELLOW);
+    m.writeDisplay();
+    delay(250);
+  }
+  m.drawLine(0,1,1,0, LED_YELLOW);
+  m.drawLine(6,7,7,6, LED_YELLOW);
+  m.writeDisplay();
+  delay(250); 
+}
+
 void loop() {
   waveCrash();
+  rotateLine();
 }
